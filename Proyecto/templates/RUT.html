@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+{%block title%}
+    Registrar UT
+    {% endblock %}
+{%block body%}
+<div>
+    <form method="post" class="contenedor">
+        <select class="form-select select-1" aria-label="Default select example" name="EMPLEADO">
+            <option selected disabled>Empleado</option>
+            {% for empleado in nombres %}
+            <option value="{{empleado.idEmpleado}}" class="letras2" name="{{ empleado.Nombre }}">{{ empleado.Nombre }}</option>
+                {% endfor %}
+        </select>
+        <select class="form-select select-1" aria-label="Default select example" name="TURNO">
+            <option selected disabled>Turno</option>
+            {% for turno in turnos %}
+            <option value="{{turno.idTurno}}" class="letras2" name="{{ turno.Nombre }}">{{ turno.Nombre }}</option>
+                {% endfor %}
+        </select>
+        <select class="form-select select-1" aria-label="Default select example" name="AREA">
+            <option selected disabled>Area</option>
+            {% for area in areas %}
+            <option value="{{area.idAL}}" class="letras2" name="{{ area.Nombre }}">{{ area.Nombre }}</option>
+                {% endfor %}
+        </select>
+        <input type="submit" value="Registrar Unidad De Trabajo">
+    </form>
+    </div>
+<div>
+    <table border="5px" width="90%" class="colorBorde  contenedor3">
+        <thead>
+        <tr>
+            <th>Empleado</th>
+            <th>Turno</th>
+            <th>Area Laboral</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in data %}
+            <tr>
+                <td>{{ item.NombreEmpleado }}</td>
+                <td>{{ item.NombreTurno }}</td>
+                <td>{{ item.NombreArea }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+<div>
+
+
+    </div>
+
+
+    {% endblock %}

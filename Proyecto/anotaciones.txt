@@ -1,0 +1,11 @@
+div>div.box#box-${box-$}*3
+    #class ="box" box-$ box 1 2 3, {texto box -1 2 3 } cantidad: 3
+div*5
+cantidad de divs
+/
+
+como hacer para que me tome la asistencia
+o el usuario
+la pagina
+
+alt w para usar el htmltagwrap

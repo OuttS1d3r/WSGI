@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{%block title%}
+      Inicio
+{% endblock %}
+{%block body%}
+<div class="contenedor-tablas">
+    <div class="table-container tabla-usuarios">
+      <table width="90%" class="colorBorde topmargintb marginleft marginright tablebckh">
+        <thead>
+        <th scope="col">
+          <h4 class="letterc">Empleados Registrados</h4>
+        </th>
+        </thead>
+      </table>
+      <table border="5px" width="90%" class="colorBorde marginleft marginright tablebck">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>DNI</th>
+            <th>Telefono</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for item in data %}
+        <tr>
+          <td>{{ item.Nombre }}</td>
+          <td>{{ item.Dni }}</td>
+          <td>{{ item.Telefono }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>  
+    <div class="tabla-calendario">
+      <div id="calendar" class="contenedor clear">
+          {{ calendario | safe }}
+      </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{%block head%}
+{% endblock %}
+{%block title%}
+    Registrar Asistencia
+{% endblock %}
+{%block body%}
+<div>
+    <div>
+        <form method="post" class="contenedor" action="/RegistrarAsistencia">
+            <select class="form-select select-1" name="EMPLEADO" onChange="cargarUTS()">
+                <option selected disabled></option>
+                {% for empleado in nombres %}
+                <option value="{{empleado.idEmpleado}}" class="letras2" name="{{ empleado.Nombre }}">{{ empleado.Nombre }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Registrar">
+        </form>
+        {%if accion==True%}
+        <div id="segundo-formulario" class="oculto">
+        <form action="">
+            <select name="unidad" id="unidad">
+                    <option selected disabled>Seleccionar Unidad de Trabajo</option>
+                    {% for unidad in Result %}
+                    <option value="{{ unidad }}" name="Unity">{{ unidad }}</option>
+                    {% endfor %}
+                </select>
+                <input type="date" name="fecha">
+                <input type="submit" value="Registrar">
+                </form>
+                </div>
+        {%endif%}
+    </div>
+</div>
+    {% endblock %}
